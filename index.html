@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshCart | Online Grocery Delivery</title>
+
+<!-- Bootstrap CSS -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- CSS -->
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold text-success fs-3" href="#">
+
+<i class="bi bi-basket2-fill"></i>
+
+FreshCart
+
+</a>
+
+<button
+class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav mx-auto">
+
+<li class="nav-item">
+
+<a class="nav-link active" href="#">
+
+Home
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#category">
+
+Categories
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#products">
+
+Products
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#offers">
+
+Offers
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#contact">
+
+Contact
+
+</a>
+
+</li>
+
+</ul>
+
+<div class="d-flex align-items-center">
+
+<input
+
+id="searchInput"
+
+class="form-control search-box"
+
+placeholder="Search groceries...">
+
+<button class="btn btn-success ms-2">
+
+<i class="bi bi-search"></i>
+
+</button>
+
+<a href="#cart"
+
+class="btn btn-warning ms-3 position-relative">
+
+<i class="bi bi-cart3"></i>
+
+<span
+
+id="cartCount"
+
+class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+0
+
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+<!-- HERO SECTION START -->
+
+<section class="hero-section">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<span class="offer-tag">
+🚚 Free Delivery on First Order
+</span>
+
+<h1 class="hero-title">
+Fresh Groceries
+<span>Delivered in 10 Minutes</span>
+</h1>
+
+<p class="hero-text">
+
+Buy fresh fruits, vegetables, dairy products,
+snacks and daily essentials at the best price.
+
+</p>
+
+<div class="hero-features">
+
+<div>🥬 Fresh Products</div>
+
+<div>⚡ Fast Delivery</div>
+
+<div>💳 Secure Payment</div>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="#products" class="btn btn-success btn-lg">
+Shop Now
+</a>
+
+<a href="#category" class="btn btn-outline-success btn-lg">
+Explore
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-6 text-center">
+
+<img src="images/banner.png"
+class="img-fluid hero-image">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HERO SECTION END -->
+
+<!-- ================= CATEGORY ================= -->
+
+<section
+
+id="category"
+
+class="container py-5">
+
+<h2 class="text-center fw-bold">
+
+Shop by Category
+
+</h2>
+
+<div class="row mt-5">
+
+<div class="col-md-2 col-6">
+
+<div class="category-card">
+
+<img src="images/fruits.png">
+
+<h6>Fruits</h6>
+
+</div>
+
+</div>
+
+<div class="col-md-2 col-6">
+
+<div class="category-card">
+
+<img src="images/vegetables.png">
+
+<h6>Vegetables</h6>
+
+</div>
+
+</div>
+
+<div class="col-md-2 col-6">
+
+<div class="category-card">
+
+<img src="images/dairy.png">
+
+<h6>Dairy</h6>
+
+</div>
+
+</div>
+
+<div class="col-md-2 col-6">
+
+<div class="category-card">
+
+<img src="images/snacks.png">
+
+<h6>Snacks</h6>
+
+</div>
+
+</div>
+
+<div class="col-md-2 col-6">
+
+<div class="category-card">
+
+<img src="images/beverages.png">
+
+<h6>Beverages</h6>
+
+</div>
+
+</div>
+
+<div class="col-md-2 col-6">
+
+<div class="category-card">
+
+<img src="images/household.png">
+
+<h6>Household</h6>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FILTER ================= -->
+
+<section class="container mb-5">
+
+<div class="row g-3">
+
+<div class="col-lg-3">
+
+<input
+
+id="searchProduct"
+
+class="form-control"
+
+placeholder="Search Product">
+
+</div>
+
+<div class="col-lg-3">
+
+<select
+
+id="categoryFilter"
+
+class="form-select">
+
+<option value="all">
+
+All Categories
+
+</option>
+
+<option value="fruit">
+
+Fruits
+
+</option>
+
+<option value="vegetable">
+
+Vegetables
+
+</option>
+
+<option value="dairy">
+
+Dairy
+
+</option>
+
+<option value="snacks">
+
+Snacks
+
+</option>
+
+<option value="beverage">
+
+Beverages
+
+</option>
+
+<option value="household">
+
+Household
+
+</option>
+
+</select>
+
+</div>
+
+<div class="col-lg-3">
+
+<select
+
+id="priceFilter"
+
+class="form-select">
+
+<option value="all">
+
+Price
+
+</option>
+
+<option value="100">
+
+Below ₹100
+
+</option>
+
+<option value="300">
+
+Below ₹300
+
+</option>
+
+<option value="500">
+
+Below ₹500
+
+</option>
+
+</select>
+
+</div>
+
+<div class="col-lg-3">
+
+<select
+
+id="brandFilter"
+
+class="form-select">
+
+<option value="all">
+
+Brand
+
+</option>
+
+<option value="Amul">
+
+Amul
+
+</option>
+
+<option value="Nestle">
+
+Nestle
+
+</option>
+
+<option value="FreshFarm">
+
+Fresh Farm
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section
+
+id="products"
+
+class="container">
+
+<h2 class="fw-bold text-center mb-5">
+
+Featured Products
+
+</h2>
+
+<div
+
+id="productContainer"
+
+class="row g-4">
+
+<!-- JavaScript Products Here -->
+
+</div>
+
+</section>
+<!-- ================= BEST SELLERS ================= -->
+
+<section class="container py-5">
+
+<div class="row">
+
+<div class="col-12 text-center mb-5">
+
+<h2 class="fw-bold">⭐ Best Sellers</h2>
+
+<p class="text-muted">
+Most loved grocery products by our customers
+</p>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="best-card text-center shadow-sm">
+
+<i class="bi bi-award-fill fs-1 text-warning"></i>
+
+<h5 class="mt-3">Premium Quality</h5>
+
+<p>Fresh farm products delivered daily.</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="best-card text-center shadow-sm">
+
+<i class="bi bi-truck fs-1 text-success"></i>
+
+<h5 class="mt-3">Fast Delivery</h5>
+
+<p>Delivery within 10-20 minutes.</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="best-card text-center shadow-sm">
+
+<i class="bi bi-tags-fill fs-1 text-danger"></i>
+
+<h5 class="mt-3">Best Offers</h5>
+
+<p>Daily discounts on groceries.</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4">
+
+<div class="best-card text-center shadow-sm">
+
+<i class="bi bi-shield-check fs-1 text-primary"></i>
+
+<h5 class="mt-3">Safe Payment</h5>
+
+<p>100% secure payment options.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= OFFERS ================= -->
+
+<section id="offers" class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-4">
+🔥 Special Grocery Offers
+</h2>
+
+<div id="offerSlider"
+class="carousel slide"
+data-bs-ride="carousel">
+<div class="carousel-indicators">
+
+<button type="button"
+data-bs-target="#offerSlider"
+data-bs-slide-to="0"
+class="active">
+</button>
+
+<button type="button"
+data-bs-target="#offerSlider"
+data-bs-slide-to="1">
+</button>
+
+<button type="button"
+data-bs-target="#offerSlider"
+data-bs-slide-to="2">
+</button>
+
+</div>
+<div class="carousel-inner rounded-4 shadow">
+
+<div class="carousel-item active">
+
+<img src="images/offer1.jpg"
+class="d-block w-100 offer-img"
+alt="Fresh Fruits Offer">
+
+<div class="carousel-caption">
+
+<h2>🥭 Fresh Fruits Sale</h2>
+
+<p>Flat 50% OFF on Fresh Fruits & Vegetables</p>
+
+<a href="#products" class="btn btn-warning mt-3">
+    Shop Now
+</a>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<img src="images/offer2.jpg"
+class="d-block w-100 offer-img"
+alt="Dairy Offer">
+
+<div class="carousel-caption">
+
+<h2>🥛 Dairy Festival</h2>
+
+<p>Buy 2 Get 1 FREE on Milk & Cheese</p>
+
+<a href="#products" class="btn btn-warning mt-3">
+    Explore
+</a>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<img src="images/offer3.jpg"
+class="d-block w-100 offer-img"
+alt="Household Offer">
+
+<div class="carousel-caption">
+
+<h2>🚚 Free Delivery</h2>
+
+<p>Free Delivery on Orders Above ₹499</p>
+
+<a href="#products" class="btn btn-warning mt-3">
+    Order Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="carousel-control-prev"
+type="button"
+data-bs-target="#offerSlider"
+data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+<button class="carousel-control-next"
+type="button"
+data-bs-target="#offerSlider"
+data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SHOPPING CART ================= -->
+
+<section id="cart" class="container py-5">
+
+<h2 class="text-center fw-bold mb-4">
+🛒 Shopping Cart
+</h2>
+
+<div class="card shadow border-0 rounded-4">
+
+<div class="card-body">
+
+<div id="cartItems">
+
+<p class="text-center text-muted">
+Your cart is empty.
+</p>
+
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between align-items-center">
+
+<h4>Total :</h4>
+
+<h4 class="text-success">
+₹<span id="totalAmount">0</span>
+</h4>
+
+</div>
+
+<button
+class="btn btn-success w-100 mt-3" onclick="placeOrder()">
+
+Proceed To Checkout
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div class="modal fade"
+id="productModal"
+tabindex="-1">
+
+<div class="modal-dialog modal-lg">
+
+<div class="modal-content rounded-4">
+
+<div class="modal-header">
+
+<h5 class="modal-title"
+id="modalTitle">
+
+Product
+
+</h5>
+
+<button
+class="btn-close"
+data-bs-dismiss="modal">
+
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<img
+id="modalImage"
+class="img-fluid rounded">
+
+</div>
+
+<div class="col-md-6">
+
+<h3
+class="text-success"
+id="modalPrice">
+
+</h3>
+
+<p
+id="modalDescription">
+
+</p>
+
+<div class="input-group mb-3">
+
+<button
+class="btn btn-outline-success"
+id="minusQty">
+
+-
+
+</button>
+
+<input
+id="modalQuantity"
+type="text"
+class="form-control text-center"
+value="1">
+
+<button
+class="btn btn-outline-success"
+id="plusQty">
+
++
+
+</button>
+
+</div>
+
+<button
+id="modalCartBtn"
+class="btn btn-success w-100">
+
+Add To Cart
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact"
+class="py-5 bg-success text-white">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-6">
+
+<h2>Contact Us</h2>
+
+<p><i class="bi bi-geo-alt-fill"></i> Chandigarh University, Punjab</p>
+
+<p><i class="bi bi-envelope-fill"></i> support@freshcart.com</p>
+
+<p><i class="bi bi-telephone-fill"></i> +91 9876543210</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<form>
+
+<input
+class="form-control mb-3"
+placeholder="Your Name">
+
+<input
+type="email"
+class="form-control mb-3"
+placeholder="Email">
+
+<textarea
+class="form-control mb-3"
+rows="4"
+placeholder="Message"></textarea>
+
+<button
+class="btn btn-warning">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-dark text-white text-center py-3">
+
+<p class="mb-0">
+© 2026 FreshCart | Designed by Aditi Sharma
+</p>
+
+</footer>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+<!-- Order Success Modal -->
+<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4" style="border-radius: 20px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      <div class="modal-body">
+        <!-- Animated Icon / Emoji -->
+        <div class="mb-3" style="font-size: 60px; line-height: 1;">🎉</div>
+        <h3 class="fw-bold text-success mb-2">Order Placed Successfully!</h3>
+        <p class="text-muted mb-3">Thank you for shopping with FreshCart. Your fresh groceries are on the way!</p>
+        
+        <!-- Order ID Card -->
+        <div class="bg-light p-3 rounded-3 mb-4 text-start" style="border: 1px dashed #198754;">
+          <small class="text-uppercase fw-bold text-muted d-block mb-1">Order Confirmation Details</small>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-dark">Order ID:</span>
+            <span id="modalOrderId" class="badge bg-success fs-6 fw-normal font-monospace"></span>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <button type="button" class="btn btn-success btn-lg w-100 rounded-pill shadow-sm" data-bs-dismiss="modal">
+          Continue Shopping 🛒
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
